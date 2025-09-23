@@ -1,0 +1,78 @@
+.about-head {
+    padding: 30px;
+}
+
+.about-firstdiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.about-mainheading
+{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-top: 50px;
+    font-weight: bolder;
+}
+.about-card {
+    flex: 1;
+    margin: 10px;
+    max-width: 600px;
+}
+
+.about-firstdiv img {
+    max-width: 100%;
+    height: auto;
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .about-firstdiv {
+        flex-direction: column;
+        margin-top: 40px;
+    }
+
+    .about-firstdiv img {
+        order: 2;
+        
+    }
+
+    .about-card {
+        order: 1;
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-head {
+        padding: 20px;
+    }
+
+    .about-firstdiv {
+        margin-top: 20px;
+    }
+
+    .about-card {
+        padding: 10px;
+    }
+
+    .about-mainheading{
+        font-size: large;
+    }
+}
+
+/* Default (Light Mode) */
+.about-card {
+    color: black;
+    background-color: white;
+}
+
+/* Dark Mode */
+.dark-mode .about-card {
+    color: white;  /* Change text to white */
+    background-color: #121212; /* Optional: Change background to dark */
+}

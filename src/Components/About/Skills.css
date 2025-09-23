@@ -1,0 +1,36 @@
+/* .skills-icons {
+    font-size: 4.5rem;
+    box-shadow: 4px 4px 5px 5px grey;
+    border-radius: 5px;
+    vertical-align: middle;
+    text-align: center;
+    display: table;
+    margin: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    padding: 10px;
+    overflow: hidden;
+    max-width: 100%;
+} */
+
+.skills-main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.skills-icons{
+    font-size: 4.5rem;
+    box-shadow: 4px 4px 5px grey;
+    margin: 20px;
+    width: 200px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border-radius: 5px;
+}
+
+.skills-icons:hover{
+    transform: scale(1.1);
+}

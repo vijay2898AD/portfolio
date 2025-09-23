@@ -1,0 +1,23 @@
+.footer-para{
+    text-align: center;
+    padding: 5px;
+    background-color: black;
+    color: white;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.para-footer{
+    color: white;
+    margin-top: 20px;
+
+}
+
+
+
+.svg-footer{
+    margin-left: 10px;
+    color: white;
+}
