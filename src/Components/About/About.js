@@ -18,7 +18,7 @@ export default function About() {
                     <div className='first-div card box-shadow about-card'>
                         <h3 className='main-content card-text '>KNOW WHO <span className='yellow'>I'M </span></h3>
                         <div className='motion'>
-                            <p className='card-text content'>Passionate and energetic <span className='yellow'>final-year B-Tech Computer Science student</span>. Quick to grasp new concepts and apply them
+                            <p className='card-text content'>Passionate and energetic <span className='yellow'>B-Tech Computer Science graduate</span>. Quick to grasp new concepts and apply them
                                 effectively.</p> <p className='card-text content' ><span className='yellow'>Strong problem-solving skills</span> and analytical skills, complemented by excellent teamwork and communication
                                     abilities.</p><p className='card-text content'>Seeking opportunities to enhance skills and <span className='yellow'>contribute to impactful projects</span> in the tech industry</p>
                         </div>

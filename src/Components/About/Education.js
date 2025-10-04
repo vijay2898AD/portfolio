@@ -8,7 +8,7 @@ export default function Education() {
         <h2>Bachelor Of Technology <span className='yellow'>CSE</span></h2>
         <p>Maharaj Vijayaram Gajapathi Raj College of Engineering (Autonomous)</p>
         <span className='yellow'>2021-2025</span>
-        <span>CGPA: <span className='yellow'>7.03</span></span>
+        <span>CGPA: <span className='yellow'>7.16</span></span>
       </div>
       <div className='education-firstdiv'>
         <h2>Intermediate <span className='yellow'>MPC</span></h2>
