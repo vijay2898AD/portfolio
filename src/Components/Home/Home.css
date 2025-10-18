@@ -1,10 +1,52 @@
-.yellow {
-    color: purple;
-    font-weight: bolder;
+/* ===============================================
+  1. THEME & COLOR DEFINITIONS (CSS VARIABLES)
+===============================================
+*/
+
+/* Default theme (Light Mode) */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000; /* Default text color (from your original '*') */
+    --accent-color: purple;
+    --accent-hover: darkviolet;
+    --special-text: purple;
+    --card-bg: #ffffff;               /* Was transparent, now white */
+    --card-text: #706c6c;
+    --card-border-color: rgba(0, 0, 0, 0.1);
+    --card-shadow: 0px 4px 6px rgba(184, 54, 54, 0.2);
+    --card-shadow-hover: 0px 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-* {
-    color: rgb(0, 0, 0);
+/* Dark Mode overrides */
+:root.dark-mode {
+    --bg-color: #121212;
+    --text-color: #ffffff; /* This is the fix for your text */
+    --card-border-color: rgba(255, 255, 255, 0.1);
+    --card-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    --card-shadow-hover: 0px 10px 20px rgba(0, 0, 0, 0.5);
+    /* --accent-color and --special-text remain the same, but you could change them here! */
+}
+
+/* ===============================================
+  2. GENERAL STYLES (Using Variables)
+===============================================
+*/
+
+body {
+    /* These variables now control your theme */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* * We DELETED the old "* { color: black; }" rule. 
+ * The color is now set on the body and inherited,
+ * which allows dark mode to work correctly.
+ */
+
+.yellow {
+    color: var(--special-text);
+    font-weight: bolder;
 }
 
 .heading-home {
@@ -15,13 +57,14 @@
     overflow: hidden;
 }
 
-.typewriter-name{
+.typewriter-name {
     font-size: 10px;
 }
 
-.motion{
+.motion {
     overflow: hidden;
 }
+
 .main-content {
     text-align: center;
     font-weight: bold;
@@ -34,27 +77,41 @@
 }
 
 .content {
-    color: black;
+    /* We REMOVED "color: black;" from here so it can inherit the theme color */
     padding: 10px;
 }
-
-
 
 .first-div {
     perspective: 1000px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     transform-style: preserve-3d;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--card-border-color);
     border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(184, 54, 54, 0.2);
+    box-shadow: var(--card-shadow);
     background-color: transparent;
     overflow: hidden;
+    color: var(--card-text);
 }
 
 .first-div:hover {
     transform: rotateY(10deg) rotateX(5deg) scale(1.05);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--card-shadow-hover);
 }
+
+.typewriter-text {
+    color: white; /* This is kept from your original CSS */
+    /* * NOTE: If this specific text is ALSO supposed to change,
+     * change "color: white;" to "color: var(--text-color);"
+     */
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+/* ===============================================
+  3. RESPONSIVE STYLES (Media Queries)
+===============================================
+*/
 
 @media only screen and (max-width: 720px) {
     .bottom-content {
@@ -91,7 +148,6 @@
         width: 300px;
         height: auto;
         margin-right: 20px;
-
     }
 
     .first-div {
@@ -106,21 +162,14 @@
     }
 }
 
-.typewriter-text {
-    color: white;
-    font-size: 25px;
-    font-weight: bold;
-}
+/* ===============================================
+  4. BUTTON STYLES
+===============================================
+*/
 
-/* Dark Mode Styling */
-body {
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.dark-mode {
-    background-color: #121212;
-    color: #ffffff;
-}
+/* * We DELETED the ".dark-mode { ... }" rule.
+ * It is no longer needed because :root.dark-mode handles everything.
+ */
 
 /* Dark Mode Toggle Button */
 .dark-mode-toggle {
@@ -130,7 +179,7 @@ body {
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
-    background-color: purple;
+    background-color: var(--accent-color);
     color: white;
     cursor: pointer;
     font-size: 1rem;
@@ -138,7 +187,7 @@ body {
 }
 
 .dark-mode-toggle:hover {
-    background-color: darkviolet;
+    background-color: var(--accent-hover);
 }
 
 /* Resume Download Button */
@@ -147,7 +196,7 @@ body {
     margin-top: 10px;
     padding: 10px 15px;
     border-radius: 5px;
-    background-color: purple;
+    background-color: var(--accent-color);
     color: white;
     text-decoration: none;
     font-size: 1rem;
@@ -155,6 +204,5 @@ body {
 }
 
 .resume-button:hover {
-    background-color: darkviolet;
+    background-color: var(--accent-hover);
 }
-

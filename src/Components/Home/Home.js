@@ -13,7 +13,7 @@ export default function Home() {
         <div>
             {/* Dark Mode Toggle Button */}
             <button className="dark-mode-toggle" onClick={() => {
-                document.body.classList.toggle("dark-mode");
+                document.documentElement.classList.toggle("dark-mode");
                 localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
             }}>
                 {document.body.classList.contains("dark-mode") ? "🌞 Light Mode" : "🌙 Dark Mode"}
